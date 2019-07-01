@@ -4,11 +4,11 @@ var bookDataFromLocalStorage = [];
 $(function(){
     loadBookData();
     var data = [
-        {text:"資料庫",value:""},
-        {text:"網際網路",value:""},
-        {text:"應用系統整合",value:""},
-        {text:"家庭保健",value:""},
-        {text:"語言",value:""}
+        {text:"資料庫",value:"database"},
+        {text:"網際網路",value:"internet"},
+        {text:"應用系統整合",value:"system"},
+        {text:"家庭保健",value:"home"},
+        {text:"語言",value:"language"}
     ]
     $("#book_category").kendoDropDownList({
         dataTextField: "text",
@@ -61,6 +61,18 @@ function loadBookData(){
     }
 }
 
-function onChange(){}
+function onChange(){
+    var value = $("#book_category").data("kendoDropDownList").value();
+//    console.log(value);   //查詢value的值 (f12 -> Console)
+    $(".book-image").attr("src","image/" + value + ".jpg");
+
+}
+
+function add(){
+    var BookName = document.getElementById("book_name").text
+    var BookAuthor = document.getElementById("book_author").text
+    var BoughtDatepicker = document.getElementById("bought_datepicker").text
+
+}
   
 function deleteBook(){}
